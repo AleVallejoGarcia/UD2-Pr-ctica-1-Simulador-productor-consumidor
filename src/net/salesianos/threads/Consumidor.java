@@ -34,7 +34,7 @@ public class Consumidor extends Thread {
                     for (int i = 0; i < verdurasAConsumir; i++) {
                         Thread.sleep(tiempoDeConsumicion() * 1000);
                         restaurante.consumir(nombre);
-                        if (i == 4) {
+                        if (i == verdurasAConsumir - 1) {
                             salir = true;
                         }
                     }
