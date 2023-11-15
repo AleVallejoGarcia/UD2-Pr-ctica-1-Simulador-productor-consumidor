@@ -5,22 +5,16 @@ public class App {
         int capacidadAlmacenamiento = 10;
         Restaurante restaurante = new Restaurante(capacidadAlmacenamiento);
 
-        Productor granjero1 = new Productor(restaurante, 5, "Manolo", capacidadAlmacenamiento);
-        Productor granjero2 = new Productor(restaurante, 6, "Gebrasio", capacidadAlmacenamiento);
+        Productor granjero = new Productor(restaurante, 5, "Hautacuperche", capacidadAlmacenamiento);
 
-        Consumidor cliente1 = new Consumidor("Manue", restaurante, 2);
-        Consumidor cliente2 = new Consumidor("Ricardo", restaurante, 3);
+        Consumidor cliente = new Consumidor("Ricardo", restaurante, 5);
 
-        granjero1.start();
-        granjero2.start();
-        cliente1.start();
-        cliente2.start();
+        granjero.start();
+        cliente.start();
 
         try {
-            granjero1.join();
-            granjero2.join();
-            cliente1.join();
-            cliente2.join();
+            granjero.join();
+            cliente.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
