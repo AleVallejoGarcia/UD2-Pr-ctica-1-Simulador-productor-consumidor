@@ -1,5 +1,6 @@
 package net.salesianos.threads;
 
+
 public class Consumidor extends Thread {
     private String nombre;
     private Restaurante restaurante;
@@ -14,8 +15,14 @@ public class Consumidor extends Thread {
 
     @Override
     public void run() {
-        for (int i = 0; i <= verdurasAConsumir; i++) {
+        try {
+            for (int i = 0; i <= verdurasAConsumir; i++) {
+                Thread.sleep(10000);
             restaurante.consumir(nombre);
         }      
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
     }
 }

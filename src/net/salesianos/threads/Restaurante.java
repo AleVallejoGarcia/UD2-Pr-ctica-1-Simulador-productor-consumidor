@@ -24,9 +24,9 @@ public class Restaurante {
     public synchronized void almacenar(String verdura, String nombre) {
         if (almacen.size() < capacidadAlmacenamiento) {
             almacen.add(verdura);
-            System.out.println(nombre + "ha traio " + verdura + " Capacidad actual: " + almacen.size());
+            System.out.println(nombre + " ha traio " + verdura + " capacidad actual: " + almacen.size());
         } else {
-            System.out.println("Muchacho el almacén esta lleno" + nombre + " esta esperando.");
+            System.out.println("Muchacho el almacén esta lleno " + nombre + " esta esperando.");
         }
     }
 
@@ -35,7 +35,7 @@ public class Restaurante {
         if (almacen.size() > 0) {
             String verdura = almacen.get(verduraAConsumir());
             almacen.remove(verduraAConsumir());
-            System.out.println(nombre + " se han tragao una" + verdura + ", capacidad actual: " + almacen.size());
+            System.out.println(nombre + " se han tragao una " + verdura + ", capacidad actual: " + almacen.size());
         } else {
             System.out.println(nombre + " tiene hambre y ho hay verduras para tragar");
         }

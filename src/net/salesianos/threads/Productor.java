@@ -10,11 +10,13 @@ public class Productor extends Thread {
     private Restaurante restaurante;
     private int verdurasAProducir;
     private String nombre;
+    private int limiteAlmacen;
 
-    public Productor (Restaurante almacen, int numeroVerduras, String nombre) {
+    public Productor (Restaurante almacen, int numeroVerduras, String nombre, int limiteAlmacen) {
         this.restaurante = almacen;
         this.verdurasAProducir = numeroVerduras;
         this.nombre = nombre;
+        this.limiteAlmacen = limiteAlmacen;
     }
 
     Random random = new Random();
@@ -25,7 +27,7 @@ public class Productor extends Thread {
     }
 
     public String verduraRandom() {
-        int posicion = random.nextInt(15) + 1;
+        int posicion = random.nextInt(limiteAlmacen) + 1;
         return verduras[posicion];
     }
 
