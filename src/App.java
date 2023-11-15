@@ -6,10 +6,10 @@ public class App {
         Restaurante restaurante = new Restaurante(capacidadAlmacenamiento);
 
         Productor granjero1 = new Productor(restaurante, 5, "Manolo", capacidadAlmacenamiento);
-        Productor granjero2 = new Productor(restaurante, 6, "Gebrasio", capacidadAlmacenamiento);
+        Productor granjero2 = new Productor(restaurante, 5, "Gebrasio", capacidadAlmacenamiento);
 
-        Consumidor cliente1 = new Consumidor("Manue", restaurante, 2);
-        Consumidor cliente2 = new Consumidor("Ricardo", restaurante, 3);
+        Consumidor cliente1 = new Consumidor("Manue", restaurante, 5);
+        Consumidor cliente2 = new Consumidor("Ricardo", restaurante, 5);
 
         granjero1.start();
         granjero2.start();
