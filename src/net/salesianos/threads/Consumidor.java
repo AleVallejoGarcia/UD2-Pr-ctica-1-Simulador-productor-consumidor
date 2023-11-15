@@ -16,7 +16,7 @@ public class Consumidor extends Thread {
     @Override
     public void run() {
         try {
-            for (int i = 0; i <= verdurasAConsumir; i++) {
+            for (int i = 0; i < verdurasAConsumir; i++) {
                 Thread.sleep(10000);
             restaurante.consumir(nombre);
         }      
