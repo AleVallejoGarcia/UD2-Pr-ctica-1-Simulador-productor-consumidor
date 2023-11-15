@@ -37,10 +37,10 @@ public class Restaurante {
 
     
     public synchronized void consumir(String nombre) {
-            int posicion = verduraAConsumir();
-            String verdura = almacen.get(posicion);
-            almacen.remove(posicion);
-            System.out.println(nombre + " se ha tragao una " + verdura + ", capacidad actual: " + almacen.size());
+        int posicion = verduraAConsumir();
+        String verdura = almacen.get(posicion);
+        almacen.remove(posicion);
+        System.out.println(nombre + " se ha tragao una " + verdura + ", capacidad actual: " + almacen.size());
         
     }
 }
