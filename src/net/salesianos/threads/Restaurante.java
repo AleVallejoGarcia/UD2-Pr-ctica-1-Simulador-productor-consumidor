@@ -21,6 +21,11 @@ public class Restaurante {
         return posicion;
     }
 
+     public int getSize() {
+        int size = almacen.size();
+        return size;
+    }
+
     public synchronized void almacenar(String verdura, String nombre) {
         if (almacen.size() < capacidadAlmacenamiento) {
             almacen.add(verdura);
@@ -29,6 +34,7 @@ public class Restaurante {
             System.out.println("Muchacho el almacén esta lleno " + nombre + " esta esperando.");
         }
     }
+
 
     
     public synchronized void consumir(String nombre) {
