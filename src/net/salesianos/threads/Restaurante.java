@@ -41,9 +41,6 @@ public class Restaurante {
             System.out.println(nombre + " tiene hambre y ho hay verduras para tragar");
         }
     }
-    
-
-    
 }
     
 
