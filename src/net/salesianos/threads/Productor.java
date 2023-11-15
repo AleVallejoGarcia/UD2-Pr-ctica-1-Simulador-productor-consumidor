@@ -33,7 +33,7 @@ public class Productor extends Thread {
 
     @Override
     public void run() {
-        for (int i = 0; i <= verdurasAProducir; i++) {
+        for (int i = 0; i < verdurasAProducir; i++) {
             String verdura = verduraRandom();
             System.out.println(nombre + " está plantando " + verdura);
         try {
