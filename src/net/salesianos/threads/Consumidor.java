@@ -23,16 +23,29 @@ public class Consumidor extends Thread {
         return tiempoConsumicion;
     }
 
-    @Override
+     @Override
     public void run() {
-        try {
-            for (int i = 0; i < verdurasAConsumir; i++) {
-                Thread.sleep( 10000);
-            restaurante.consumir(nombre);
-        }      
-        } catch (Exception e) {
+
+        boolean salir = false;
+
+        while (salir == false) {
+            try {
+                if (restaurante.getSize() > 0) {
+                    for (int i = 0; i < verdurasAConsumir; i++) {
+                        Thread.sleep(tiempoDeConsumicion() * 1000);
+                        restaurante.consumir(nombre);
+                        if (i == verdurasAConsumir - 1) {
+                            salir = true;
+                        }
+                    }
+                } else {
+                    System.out.println(nombre + " tiene hambre y ho hay verduras para tragar");
+                    Thread.sleep(tiempoDeConsumicion() * 1000);
+                }
+            } catch (Exception e) {
             e.printStackTrace();
-        }
-        
+    
+            }
+        } 
     }
 }
