@@ -7,12 +7,12 @@ public class Productor extends Thread {
     private String verduras[] = new String[]{"lettuce", "cabbage", "onion", "spinach", "potato", "celery", "asparagus", "radish", "broccoli", "artichoke", "tomato", "cucumber", "eggplant", "carrot", "green bean"};
     private int TIEMPOLIMITE = 5;
 
-    private Restaurante almacen;
+    private Restaurante restaurante;
     private int verdurasAProducir;
     private String nombre;
 
     public Productor (Restaurante almacen, int numeroVerduras, String nombre) {
-        this.almacen = almacen;
+        this.restaurante = almacen;
         this.verdurasAProducir = numeroVerduras;
         this.nombre = nombre;
     }
@@ -39,8 +39,7 @@ public class Productor extends Thread {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println(nombre + " ha cosechado " + verdura);
-        almacen.almacenar(verdura);
+        restaurante.almacenar(verdura, nombre);
         }
     }
 }
